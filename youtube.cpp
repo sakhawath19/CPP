@@ -1,8 +1,24 @@
+
+/*
 #include <iostream>
 
 using std::cout;
 using std::cin;
+int main()
+{
+    int slices;
+    cout << "Y0 fatty how many pieces of pizza you eat?: ";
+    cin >> slices; 
+    cout << "You Have " << slices << " slices of pizza" << std::endl;
+}*/
 
+/*
+#include <iostream>
+
+using std::cout;
+using std::cin;
+//cin instance of istream class
+//cout instance of ostream class
 int main()
 {
     int slices;
@@ -11,7 +27,7 @@ int main()
 
     cout <<"You have entered " << slices <<std::endl;
 
-}
+}*/
 
 
 /*

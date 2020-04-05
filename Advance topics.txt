@@ -1,0 +1,6 @@
+- pointer and reference vars
+- class templates
+- lvalue and rvalue
+- lambda syntax
+- move semantics
+- smart pointers
