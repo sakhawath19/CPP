@@ -1,4 +1,27 @@
 #include <iostream>
+#include <float.h>
+using std::cout;
+// double would be preferable most of the cases
+//to deal with money you need to use some other library which is more trustworthy
+
+int main()
+{
+    float a = 10.3/3;
+    a = a * 1000000000000;
+    double b = 77000; //7.7E4;
+    long double c;
+
+    cout <<std::fixed << a << std::endl; // representation without exponent
+
+    cout << FLT_DIG <<std::endl; //checking trustworthy digit number
+    cout << LDBL_DIG <<std::endl; //checking trustworthy digit number
+    cout << DBL_DIG <<std::endl; //checking trustworthy digit number
+}
+
+
+
+/*
+#include <iostream>
 
 using std::cout;
 
@@ -10,12 +33,12 @@ int main()
 
     bool rice_is_bad  = 0;
     cout << std::boolalpha << rice_is_bad << std::endl;//printing false/true
-    
-}
 
+}*/
 
-#include <iostream>
 /*
+#include <iostream>
+
 #include <string>
 
 using std::cout;
