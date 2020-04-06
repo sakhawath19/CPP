@@ -1,4 +1,41 @@
 #include <iostream>
+
+using std::cout;
+
+int main()
+{
+    //bool pizza_is_good = true;
+    bool pizza_is_good = -1; //0 is false anything else is true
+    cout << pizza_is_good <<std::endl;
+
+    bool rice_is_bad  = 0;
+    cout << std::boolalpha << rice_is_bad << std::endl;//printing false/true
+    
+}
+
+
+#include <iostream>
+/*
+#include <string>
+
+using std::cout;
+using std::endl;
+
+//example of escape sequence
+int main()
+{
+    cout << "Hello\tThere" << endl;
+    cout << "Hello\nThere" << endl;
+    cout << "Hello\bThere" << endl; //delete character
+    cout << "Hello\vThere" << endl;
+    cout << "Hello\0" << endl; //end of string
+    cout << "Hello \"There\"" << endl;
+    cout << "Hello \"There\" '" << endl;
+    cout << "Hello\\" << endl;
+}*/
+
+/*
+#include <iostream>
 #include <climits>
 
 using std::cout;
@@ -20,9 +57,8 @@ int main()
 
     unsigned char c = 129;
     cout << (int) c << std::endl; //data casting
-
     
-}
+}*/
 
 
 /*
