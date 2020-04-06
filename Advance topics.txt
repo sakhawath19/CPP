@@ -5,3 +5,4 @@
 - move semantics
 - smart pointers
 - unicode
+- escape sequences
