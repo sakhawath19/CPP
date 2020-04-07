@@ -6,3 +6,4 @@
 - smart pointers
 - unicode
 - escape sequences
+- https://en.cppreference.com/w/
