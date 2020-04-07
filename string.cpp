@@ -1,3 +1,32 @@
+#include <iostream>
+#include <string>
+
+using std::string;
+
+int main()
+{
+    string greeting = "What the hell?";
+    std::cout << greeting.find("hell") << std::endl;
+    greeting.replace(greeting.find("hell"), 4, "****");
+
+    std::cout << greeting << std::endl;
+
+    std::cout << greeting.substr(5, 2) << std::endl;
+
+    std::cout << greeting.find_first_of("aeiou") << std::endl;
+
+    //npos == -1
+
+    if(greeting.find_first_of("!") == -1)
+        std::cout << "Not found" << std::endl;
+
+    //return 0 if it is equal
+    if(greeting.compare("What the hell?"))
+        std::cout << "Equals" << std::endl;
+
+}
+
+
 /*
 #include <iostream>
 #include <string>
