@@ -1,6 +1,52 @@
 // lesson for array
 // lesson for vector
 // lesson for templatized array
+
+#include <iostream>
+#include <vector>
+
+//passing by reference
+//without passing by reference it just copy the whole value
+void print_vector(std::vector<int> &data)
+{
+    data.push_back(12);
+    for(int i = 0; i < data.size(); i++)
+    {
+        std::cout << data[i] << "\t";
+    } std::cout << std::endl;
+}
+
+int main()
+{
+    std::vector<int> data = {1, 2, 3};
+    print_vector(data);
+    print_vector(data);
+    print_vector(data);
+    print_vector(data);
+    print_vector(data);
+}
+
+/*
+#include <iostream>
+#include <vector>
+
+using std::cout;
+using std::cin;
+using std::endl;
+//using std::vector;
+//run this command to execute this program
+//g++ array_vector.cpp -std=c++11
+int main()
+{
+    std::vector<int> data = {1, 2, 3};
+    data.push_back(100);
+    cout << data[data.size()-1] << endl;
+    data.pop_back(); //remove the last element
+    cout << data.size() << endl;
+}*/
+
+
+/*
 #include <iostream>
 #include <limits>
 
@@ -45,7 +91,7 @@ int main()
     //cin.ignore(numeric_limits < streamsize>::max(), '\n');
 
     return 0;
-}
+}*/
 
 
 /*
