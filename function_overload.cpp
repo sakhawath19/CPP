@@ -3,6 +3,18 @@
 
 #include <iostream>
 
+double power(int base, int pow = 2) 
+{
+    int total = 1;
+
+    for(int i = 0; i < pow; i++)
+    {
+        total *=base;
+
+    }
+    return total;
+}
+
 struct Rectangle 
 {
     double length;
@@ -33,4 +45,5 @@ int main()
     std::cout << area(rectangle.length, rectangle.width) << std::endl;
     std::cout << area(rectangle.length) << std::endl;
     std::cout << area(rectangle) << std::endl;
+    std::cout << power(3) << std::endl;
 }
