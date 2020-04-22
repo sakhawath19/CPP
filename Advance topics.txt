@@ -7,3 +7,6 @@
 - unicode
 - escape sequences
 - https://en.cppreference.com/w/
+- custom array like list, ques, link etc
+- https://www.geeksforgeeks.org/c-plus-plus/
+- automated testing
