@@ -1,3 +1,6 @@
+// Function template helps to avoid defining explicitly paramter type
+// Same function can be used for multiple data type
+
 #include <iostream>
 #include <string>
 
