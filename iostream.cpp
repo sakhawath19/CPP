@@ -2,6 +2,7 @@
 // std::cin is used to get an input value (cin = character input)
 // << is used with std::cout, and shows the direction that data is moving
 // \n is preffered over std::endl to avoid flashing 
+// :: scope resolution operator
 
 #include <iostream>
 #include <fstream>
