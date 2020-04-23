@@ -1,3 +1,48 @@
+// Highly recommended to use automatic formatting feature
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::string;
+int main()
+{
+    // Easy to read
+    int cost          = 57;
+    int pricePerItem  = 24;
+    int value         = 5;
+    int numberOfItems = 17;
+
+    
+    // Easy to read
+    std::cout << "Hello world!\n";                  // cout lives in the iostream library
+    std::cout << "It is very nice to meet you!\n";  // these comments are easier to read
+    std::cout << "Yeah!\n";                         // especially when all lined up
+
+    
+    // Easy to read
+    // cout lives in the iostream library
+    std::cout << "Hello world!\n";
+ 
+    // these comments are easier to read
+    std::cout << "It is very nice to meet you!\n";
+ 
+    // when separated by whitespace
+    std::cout << "Yeah!\n";
+
+    
+    cout << "This is a really, really, really, really, really, really, really, " 
+        "really long line\n"; // one extra indentation for continuation line
+ 
+    cout << "This is another really, really, really, really, really, really, really, "
+            "really long line\n"; // text aligned with the previous line for continuation line
+ 
+    cout << "This one is short\n";
+    return 0;
+}
+
+
+
+/*
 #include <iostream>
 #include <string>
 
@@ -24,7 +69,7 @@ int main()
     if(greeting.compare("What the hell?"))
         std::cout << "Equals" << std::endl;
 
-}
+}*/
 
 
 /*
