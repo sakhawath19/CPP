@@ -7,10 +7,13 @@ There are two basic type of macros:
 
 
 
+
 /* Object like macros can be defined in two ways 
 #define identifier
 #define identifier substitution_text
 */ //Avoid using these kind of macros
+
+
 
 
 /* #include <iostream>
@@ -47,6 +50,7 @@ int main()
  
     return 0;
 } */
+
 
 
 
