@@ -1,4 +1,30 @@
+// Two type of constant 
+// Compile time constant and run time constant
+// compile-time should be declared as constexpr(best practice)
+// run-time constant should be declared as const(best practice)
 
+#include <iostream>
+using std::cout;
+using std::cin;
+
+int main()
+{
+    constexpr double gravity { 9.8 }; // ok, the value of 9.8 can be resolved at compile-time
+    //gravity = 9.9; // not allowed, this will cause a compile error
+    constexpr int sum { 4 + 5 }; // ok, the value of 4 + 5 can be resolved at compile-time
+ 
+    std::cout << "Enter your age: ";
+    int age;
+    std::cin >> age;
+    const int myAge { age }; // not okay, age can not be resolved at compile-time
+    //constexpr int myAge { age }; // not okay, age can not be resolved at compile-time
+    return 0;
+}
+
+
+
+
+/*
 //example of constant modifier 
 #include <iostream>
 #include <vector>
@@ -12,7 +38,7 @@ void print_array(const int data[], int size)
 {
     for(int i = 0; i < size; i++)
     {
-        //this will modify the original data without data modifier is defiend as const
+        // const modifier will not allow to modify the original data
         //data[i]++; 
         std::cout << data[i] << "\t";
     }
@@ -27,13 +53,20 @@ int main()
 
     std::cout << data[0] << std::endl;
     return 0;
-}
+} */
+
+
+
+
+
+// Example of symbolic constant such as macros 
 /*
 #include <iostream>
 using std::cout;
 using std::endl;
 
-#define X 10 //macros
+//#define identifier substitution_text
+#define X 10 //macros // best practice to use constexpr instead of macros
 
 int main()
 {
