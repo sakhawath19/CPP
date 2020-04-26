@@ -11,7 +11,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void print_array(std::array<int, 20> data)
+void print_array(std::array<int, 5> data)
 {
     for(int i = 0; i < data.size(); i++)
     {
@@ -22,7 +22,7 @@ void print_array(std::array<int, 20> data)
 
 int main()
 {
-    std::array<int, 20> data = {1, 2, 3};
+    std::array<int, 5> data = {1, 2, 3}; // defined size of the vector
     print_array(data);
 }
 
