@@ -1,3 +1,5 @@
+// https://www.learncpp.com/cpp-tutorial/45-enumerated-types/
+// Read what are enumerators useful for 
 // Enum is a user defined data type 
 // where we specify a set of values for a variable
 // and the variable can only take one out of a small set of possible values. 
