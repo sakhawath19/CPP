@@ -36,9 +36,20 @@ int main()
 
     print_length(vec);                          // passing vector to a function
 
-    vec.resize(7);                               // Increased size by adding default value 0 (for integer)
+    vec.resize(7);                              // Increased size by adding default value 0 (for integer)
 
     for (int i: vec)
+    {
+        cout << i << std::endl;
+    }
+
+    // resizing is computationally expensive 
+    // better to initialize vector with fixed size such as std::vector<int> vec(3)
+    vec.resize(3);                               // Keep its original value but resized it
+
+    cout << "Resized vector:" << std::endl;
+
+    for (int i : vec)
     {
         cout << i << std::endl;
     }
