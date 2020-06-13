@@ -4,7 +4,7 @@
 // where we specify a set of values for a variable
 // and the variable can only take one out of a small set of possible values.
 // do not assign specific values to your enumerators (best practice)
-// C++ same values for multiple enumerator. Try to avoid it.  
+// C++ allows same values for multiple enumerator. ***Try to avoid it.  
 
 /*
 enum Direction {EAST, WEST, NORTH, SOUTH}dir;
@@ -22,6 +22,8 @@ enum Color
     // Here are the enumerators
     // These define all the possible values this type can hold
     // Each enumerator is separated by a comma, not a semicolon
+    // Name enumerators with prefix_lower_case
+    // *** Avoid upper case 
     COLOR_BLACK,
     COLOR_RED,
     COLOR_BLUE,
