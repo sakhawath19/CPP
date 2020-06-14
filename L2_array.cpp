@@ -1,6 +1,15 @@
-// https://www.learncpp.com/cpp-tutorial/61-arrays-part-i/
-// Fixed arrays cannot have a length based on either user input or some other value calculated at runtime.
-// Fixed arrays have a fixed length that can not be changed.
+/*
+https://www.learncpp.com/cpp-tutorial/61-arrays-part-i/
+Fixed arrays cannot have a length based on either user input or some other value calculated at runtime.
+
+Fixed arrays have a fixed length that can not be changed.
+
+Arrays decay into pointers when passed to a function.  
+
+Finally, it is worth noting that arrays that are part of structs or classes do not decay when 
+the whole struct or class is passed to a function.
+*/
+
 #include <iostream>
 
 enum StudentNames
@@ -23,6 +32,7 @@ enum class Employee
 }; 
 
 void pass_array(int odd_val[5]);
+void pass_array_as_pointer(int *odd_val);           // better to use 
 void pass_array_no_change(const int odd_val[]);
 
 int main()
@@ -42,6 +52,10 @@ int main()
     std::cout << "Actual array has been changed: " << array_1[0] << std::endl;
 
     pass_array_no_change(array_1);          // to unchange the array, const keyword is used in function parameter
+
+    // actually the array argument decays into a pointer
+    pass_array_as_pointer(array_1);
+
 
     int testScores[MAX_STUDENTS];           // allocate 5 integers
     testScores[STAN] = 76;                  // assigning values in index 2
@@ -75,6 +89,8 @@ int main()
     return 0;
 }
 
+
+
 void pass_array(int odd_val[])
 {
     odd_val[0] = 0;
@@ -87,6 +103,11 @@ void pass_array_no_change(const int odd_val[])
     // odd_val[0] = 0;                      // this array can not be altered 
 
     std::cout << "Array has not been changed: " << odd_val[0] << std::endl;
+}
+
+void pass_array_as_pointer(int *odd_val)
+{
+    std::cout << "Array passed  " << odd_val[0] << std::endl;
 }
 /*
 int main()
