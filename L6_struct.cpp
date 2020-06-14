@@ -11,6 +11,9 @@ In c++ struct and class are similar other than default access modifier
 conventionally c++ uses PODS, that means struct only used for data variables 
 
 By convention struct name starts with capital letter 
+
+READ: Accessing structs across multiple files
+https://www.learncpp.com/cpp-tutorial/47-structs/
 */
 
 #include <iostream>
@@ -58,7 +61,10 @@ int main()
 
     Company grammen {{4, 80, 400000}, 5000};    // Initializing nested structure
 
-    std:: cout << grammen.CEO.age << std::endl;       
+    std:: cout << grammen.CEO.age << std::endl;      
+
+    // a short is 2 bytes, an int is 4 bytes, and a double is 8 bytes
+     std::cout << "The size of Employee is " << sizeof(Employee) << '\n'; 
 
     return 0;
 }
