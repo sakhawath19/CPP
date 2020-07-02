@@ -16,7 +16,7 @@ class ONE;
 class TWO
 {
 public:
-  void print(ONE& x);
+  void print(ONE& x);                   // TWO is using reference of ONE, so class ONE is declared in advance
 };
 
 class ONE
