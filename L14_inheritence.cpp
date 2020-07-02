@@ -1,3 +1,92 @@
+
+// Example of hide base function in derived class 
+#include <iostream>
+ 
+class Base
+{
+    private:
+        double m_value;
+
+    public:
+        Base(double value): m_value{value} {}
+
+        double get_tripple() { return this->m_value * 3; }
+
+    protected:
+        void print_value() { std::cout << m_value << std::endl; }
+
+        double get_double() { return this->m_value * 2; }
+};
+
+class Derived: public Base
+{
+    public:
+        Derived(double value) : Base(value) {}
+
+        using Base::get_double;             // Protected base function will be accessabe by user 
+
+        double get_tripple() = delete;      // This public base function is no more available for user 
+};
+
+int main()
+{
+    Derived d(7);
+    std::cout << d.get_double() << std::endl; 
+}
+// Avoid multiple inheritance unless alternatives lead to more complexity.
+// Example of multiple inheritance
+/*
+#include <iostream>
+ 
+class USBDevice
+{
+private:
+    long m_id;
+ 
+public:
+    USBDevice(long id)
+        : m_id(id)
+    {
+    }
+ 
+    long getID() { return m_id; }
+};
+ 
+class NetworkDevice
+{
+private:
+    long m_id;
+ 
+public:
+    NetworkDevice(long id)
+        : m_id(id)
+    {
+    }
+ 
+    long getID() { return m_id; }
+};
+ 
+class WirelessAdapter: public USBDevice, public NetworkDevice
+{
+public:
+    WirelessAdapter(long usbId, long networkId)
+        : USBDevice(usbId), NetworkDevice(networkId)
+    {
+    }
+};
+
+ 
+int main()
+{
+    WirelessAdapter c54G(5442, 181742);
+    std::cout << c54G.USBDevice::getID(); // To avoid ambiguity 
+ 
+    return 0;
+}
+*/
+
+// Example of extending function of base class 
+/*
 #include <iostream>
 
 class Base
@@ -41,6 +130,7 @@ int main()
  
     return 0;
 }
+*/
 
 /* 
 First, main() calls C(int, double, char). The C constructor calls B(int, double). 
