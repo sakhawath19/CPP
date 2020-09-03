@@ -13,6 +13,8 @@ Fourth, it is not possible to change the number of operands an operator supports
 Finally, all operators keep their default precedence and associativity (regardless of what they’re used for) and this can not be changed.
 */
 
+// Prefer overloading operators as normal functions instead of friends if it’s possible to do so without adding additional functions.
+
 #include <iostream>
 
 class Cents
@@ -25,17 +27,35 @@ class Cents
 
         friend Cents operator +( Cents &c1, Cents &c2 );
 
+        friend Cents operator +( int value, Cents &c1 );
+
+        // friend function defined inside the class
         friend Cents operator -(Cents &c1, int value)
         {
             return Cents(c1.m_cents - value);
         }
 
-        int get_cents(){ return this->m_cents; }
+        // without const this function is not accessable by other function outside the class 
+        int get_cents() const { return this->m_cents; } 
 };
 
 Cents operator +( Cents &c1, Cents &c2)
 {
     return Cents(c1.get_cents() + c2.get_cents()); 
+}
+
+Cents operator +(int value, Cents &c)
+{
+    return { value + c.m_cents };
+}
+
+
+// note: this function is not a member function nor a friend function!
+Cents operator *(const Cents &c1, const Cents &c2)
+{
+	// use the Cents constructor and operator+(int, int)
+        // we don't need direct access to private members here
+	return Cents(c1.get_cents() * c2.get_cents());
 }
 
 int main()
@@ -51,5 +71,12 @@ int main()
     Cents cent_sub{ cents1 - 2 };
 	std::cout << "I have " << cent_sub.get_cents() << " cents.\n";
  
+    // Cents cent_sum2{ 5 + Cents{2} };
+    Cents c2{ 6 + cents1 };
+	std::cout << "I have " << c2.get_cents() << " cents.\n";
+
+    Cents c3{ cents1 * cents2 };
+	std::cout << "I have " << c3.get_cents() << " cents.\n";
+
 	return 0;
 }
