@@ -53,7 +53,12 @@ int main()
     float *fptr2;                                       // ptr2 is uninitialized
     fptr2 = 0;                                          // ptr2 is now a null pointer
     float *fptr3 { NULL };                              // ptr3 is now a null pointer
-    float *fptr4 { nullptr };                           // ptr4 is now a null pointer    
+    float *fptr4 { nullptr };                           // ptr4 is now a null pointer  
+
+    int value = 5;
+    const int *ptr1 = &value;       // ptr1 points to a "const int", so this is a pointer to a const value.
+    int *const ptr2 = &value;       // ptr2 points to an "int", so this is a const pointer to a non-const value.
+    const int *const ptr3 = &value; // ptr3 points to a "const int", so this is a const pointer to a const value.  
 
     return 0;
 }
