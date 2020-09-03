@@ -6,6 +6,7 @@ This is called type inference (also sometimes called type deduction)
 Avoid using type inference for function return types(best practice).
 */
 
+/*
 #include <iostream>
 
 // int addition(int x, int y) and expression with auto are same
@@ -39,9 +40,32 @@ auto multiplication(int x, int y) -> int
 {
     return (x * y); 
 }
+
+*/
 /*
 void add_and_print(auto x, auto y)              // this is allowed in C++20 only
 {
     std::cout << "Sum: " << x + y << std:endl;
 }
 */
+
+#include <iostream>
+#include <string>
+
+
+int main()
+{
+    using std::cout;
+    std::string st;
+
+    st = "Test code for string"; 
+
+    //std::string::iterator it;
+
+    for (auto it = st.begin(); it != st.end(); it++)
+    {
+        cout << *it;   
+    }
+
+    return 0;
+}
